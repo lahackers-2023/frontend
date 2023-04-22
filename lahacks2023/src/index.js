@@ -1,13 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
+import Home from './Views/Home';
+import SignUp from './Views/SignUp'
+import User from './Views/User'
 import reportWebVitals from './reportWebVitals';
+import { Auth0Provider } from "@auth0/auth0-react";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Home/>
+    },
+    {
+      path: "/signup",
+      element: <SignUp/>
+    },
+    {
+      path: "/user",
+      element: <User/>
+    }
+  ]
+);
+
 root.render(
   <React.StrictMode>
-    <App />
+  <Auth0Provider
+    domain="dev-xmqkw5ngbkkgcxok.us.auth0.com"
+    clientId="uX7ATeboD6Q01x05Z9Xvcj5K2FtJA9nH"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+  >
+  
+    <RouterProvider router={router}/>
+  
+  </Auth0Provider>
   </React.StrictMode>
 );
 

@@ -1,6 +1,6 @@
 import LoginButton from "../Components/login";
 
-const App = () => {
+const Home = () => {
     return (
     <div>
         <p>Edit <code>src/App.js</code> and save to reload. </p>
@@ -10,4 +10,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default Home;
