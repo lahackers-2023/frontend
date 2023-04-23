@@ -1,6 +1,7 @@
 import LoginButton from "../Components/login";
 import './Landing.css'
 import landing_image from './landing_image.png'
+import landingLogo from './logo.png'
 
 const Landing = () => {
     return (
@@ -50,6 +51,18 @@ const Landing = () => {
             <h2 className="whats-the-catch">
             As a receiver, you have one opportunity to respond to the sender of the postcard. It could range between a short thank you for the sentiments, or something more vulnerable you’ve been meaning to share. 
             </h2>
+        </div>
+
+        <div className="landing-last">
+            <h1 className='our-philosophy'>
+                Our Philosophy
+            </h1>
+            <p className='philosophy-desc'>
+            Simply put, we want to promote meaningful connection. By bridging traditional methods, like sending a loved one a postcard, and thrilling aspects, like the chance to respond to the sender once, we hope to create a connection that is mysterious yet safe, and while fleeting, is quite memorable.
+            </p>
+            <img src={landingLogo} className='landing-logo'>
+            </img>
+
         </div>
         {/* <p>Edit <code>src/App.js</code> and save to reload. </p> */}
         {/* <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Home</a> */}
