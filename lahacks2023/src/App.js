@@ -1,7 +1,5 @@
-import logo from './logo.svg';
-import MyMap from './viewport-animation/src/AnimatedMap';
 import './App.css';
-import Map from './Components/PostcardReceivedMap/PostcardReceivedMap.jsx'
+import ReceivePostcard from './Views/ReceivePostcard';
 
 function App() {
   return (
@@ -22,7 +20,7 @@ function App() {
     //   </header>
     <>
       {/* <MyMap /> */}
-      <Map />
+      <ReceivePostcard />
 
 
     </>

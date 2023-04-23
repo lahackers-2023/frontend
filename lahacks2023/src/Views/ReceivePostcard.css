@@ -1,14 +1,38 @@
-.receive-postcard-wrapper {
+.container {
     height: 100vh;
     width: 100vw;
-    background-color: red;
-    /* position: relative; */
-}
-
-.overlay {
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    background-color: green;
-    position: absolute;
-}
-
+    z-index: 100000;
+    background-color: #F3ECDF;
+    opacity: 75%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .youve-got-mail {
+    font-family: 'DM Serif Display', serif;
+    font-size: 96px;
+    color: #45350D;
+    margin: 0;
+  }
+  
+  
+  
+  .click-anywhere {
+    font-family: 'DM Serif Display', serif;
+    color: #45350D;
+    font-size: 36px;
+    margin: 0;
+  }
+  
