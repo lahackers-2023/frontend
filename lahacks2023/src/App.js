@@ -3,12 +3,14 @@
 // import './App.css';
 import PlaceSelector from './PlaceSelector';
 import React from 'react';
+import Landing from './Views/Landing';
 
 function App() {
 
   return (
     <>
-      <PlaceSelector/>
+      {/* <PlaceSelector/> */}
+      <Landing/>
     </>
   )
 
