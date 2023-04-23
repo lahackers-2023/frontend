@@ -11,9 +11,12 @@ const VerifyUser = () => {
 
 
     const redirect = (obj) => {
+        console.log(obj)
         let json = JSON.parse(obj);
         if (Object.keys(json).length ===0) {
-            navigate('/signup')
+            console.log(user)
+            console.log(obj)
+            navigate('/signup', {state: {email: user.email}})
         } else {
             console.log(json["uid"])
             navigate('/home', {state: {uid: json['uid']}})
@@ -24,6 +27,7 @@ const VerifyUser = () => {
         
             var formdata = new FormData();
             formdata.append("email", user.email);
+            console.log(user.email)
 
             var requestOptions = {
             method: 'POST',
