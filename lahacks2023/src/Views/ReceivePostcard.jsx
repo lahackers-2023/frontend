@@ -23,7 +23,7 @@ function Overlay() {
         <>
             <AnimatePresence>
                 {visible && (
-                    <motion.div exit = {{opacity: 0 }} transition={{ transition: 'ease-out', duration: "1", delay: "0" }} className="overlay" onClick={handleClick}>
+                    <motion.div exit = {{opacity: 0 }} transition={{ transition: 'ease-out', duration: "1", delay: "0" }} className="overlay" onClick={handleClick}>                        
                         <motion.h1 className='youve-got-mail'
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 100 }}
@@ -37,7 +37,6 @@ function Overlay() {
                     </motion.div>)
                 }
             </AnimatePresence>
-            <PostcardDelivered/>
         </>
     )
 
@@ -55,6 +54,7 @@ function ReceivePostcard() {
             </MapContainer>
         </div>
         <PostcardDelivered/>
+
         </>
 
     );
