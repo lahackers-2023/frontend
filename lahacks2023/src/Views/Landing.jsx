@@ -7,9 +7,9 @@ import NavBar from "../Components/NavBar";
 const Landing = () => {
   return (
     <>
-      {/* <NavBar /> */}
+      {<NavBar />}
 
-      <div className="landing-background">
+      <div className="landing-background" style={{ marginTop: 50 }}>
         <div className="masthead">
           <h1 className="sincerely">Sincerely,</h1>
           <img src={landing_image} className="landing-image" alt=""></img>
