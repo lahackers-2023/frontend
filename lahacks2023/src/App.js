@@ -1,13 +1,17 @@
-import LoginButton from "../Components/login";
 
-const App = () => {
-    return (
-    <div>
-        <p>Edit <code>src/App.js</code> and save to reload. </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Home</a>
-        <LoginButton/>
-    </div>
-    )
+// import logo from './logo.svg';
+// import './App.css';
+import PlaceSelector from './PlaceSelector';
+import React from 'react';
+
+function App() {
+
+  return (
+    <>
+      <PlaceSelector/>
+    </>
+  )
+
 }
 
 export default App;
