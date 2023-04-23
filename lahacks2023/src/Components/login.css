@@ -1,7 +1,7 @@
 .login-button {
     grid-column: 9 / 11;
     grid-row: 1 / 2;
-    height: 80%;
+    height: 60px;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
