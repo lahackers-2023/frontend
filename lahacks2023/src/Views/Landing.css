@@ -65,7 +65,7 @@
 .landing-item-one {
     grid-column: 2 / 4;
     grid-row: 3 / 5;
-    font-size: 84px;
+    font-size: 92px;
     font-family: 'DM Serif Display', serif;
     margin: auto;
 }
@@ -73,7 +73,7 @@
 .landing-item-two {
     grid-column: 4 / 6;
     grid-row: 3 / 5;
-    font-size: 84px;
+    font-size: 92px;
     font-family: 'DM Serif Display', serif;
     margin: auto;
 }
@@ -81,7 +81,7 @@
 .landing-item-three {
     grid-column: 6 / 8;
     grid-row: 3 / 5;
-    font-size: 84px;
+    font-size: 92px;
     font-family: 'DM Serif Display', serif;
     margin: auto;
 }
@@ -89,7 +89,7 @@
 .landing-item-four {
     grid-column: 8 / 10;
     grid-row: 3 / 5;
-    font-size: 84px;
+    font-size: 92px;
     font-family: 'DM Serif Display', serif;
     margin: auto;
 }
