@@ -1,51 +1,52 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
-import Landing from './Views/Landing';
-import SignUp from './Views/SignUp'
-import Home from './Views/Home'
-import reportWebVitals from './reportWebVitals';
+import Landing from "./Views/Landing";
+import SignUp from "./Views/SignUp";
+import Home from "./Views/Home";
+import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import VerifyUser from './Views/VerifyUser';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import VerifyUser from "./Views/VerifyUser";
+import ReceivePostcard from "./Views/ReceivePostcard";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Landing/>
-    },
-    {
-      path: "/signup",
-      element: <SignUp/>
-    },
-    {
-      path: "/home",
-      element: <Home/>
-    },
-    {
-      path: '/verify',
-      element: <VerifyUser/>
-    }
-  ]
-);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Landing />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
+  },
+  {
+    path: "/verify",
+    element: <VerifyUser />,
+  },
+  {
+    path: "/map",
+    element: <ReceivePostcard />,
+  },
+]);
 
 root.render(
   <React.StrictMode>
-  <Auth0Provider
-    domain="dev-xmqkw5ngbkkgcxok.us.auth0.com"
-    clientId="uX7ATeboD6Q01x05Z9Xvcj5K2FtJA9nH"
-    authorizationParams={{
-      redirect_uri: "http://localhost:3000/verify"
-    }}
-  >
-  
-    <RouterProvider router={router}/>
-  
-  </Auth0Provider>
+    <Auth0Provider
+      domain="dev-xmqkw5ngbkkgcxok.us.auth0.com"
+      clientId="uX7ATeboD6Q01x05Z9Xvcj5K2FtJA9nH"
+      authorizationParams={{
+        redirect_uri: "http://localhost:3000/verify",
+      }}
+    >
+      <RouterProvider router={router} />
+    </Auth0Provider>
   </React.StrictMode>
 );
 

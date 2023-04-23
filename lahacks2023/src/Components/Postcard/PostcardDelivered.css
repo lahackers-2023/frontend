@@ -1,0 +1,45 @@
+.postcard-wrapper-delivered {
+    width: 700px;
+    height: 500px;
+
+    background-color: #F3ECDF;
+    background-image: url('./BlankPostcard.png');
+    background-size: contain;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000000000;
+    position: absolute;
+    translate: 27vw 10vh;
+}
+
+
+.postcard-back-text-delivered {
+    width: 275px;
+    height: 420px;
+    grid-column: 0;
+    grid-row: 0;
+    justify-self: center;
+}
+
+
+
+.postcard-back-text-field-delivered {
+    border: none;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    outline:none;
+    font-size: 14px;
+    font-family: 'Kalam', cursive;
+}
+
+
+
+.postcard-back-text-field:hover { 
+    background-color: #F3ECDF;
+    border-radius: 50px;
+
+}
