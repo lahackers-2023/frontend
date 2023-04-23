@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import FileInput from "./FileInput";
 import ImageCropper from "./ImageCropper";
-import PostcardFront from "./PostcardFront"
+import PostcardFront from "../Postcard/PostcardFront";
+import PostcardBack from "../Postcard/PostcardBack";
 
 function CroppingFlow() {
   const [image, setImage] = useState("");
   const [currentPage, setCurrentPage] = useState("choose-img");
   const [imgAfterCrop, setImgAfterCrop] = useState("");
+  const [backText, setBackText] = useState("");
 
   // Invoked when new image file is selected
   const onImageSelected = (selectedImg) => {
@@ -62,11 +64,22 @@ function CroppingFlow() {
         />
       ) : currentPage === "postcard-sent" ? (
         <>YOUR POSTCARD HAS BEEN SENT</>
-      ) :
-       (
+      ) : (
         <div>
-          <div style={{maxWidth: "100vw", width: "100vh", margin: "auto", left: 0, right: 0}}> 
-            <PostcardFront src={imgAfterCrop}/>
+          <div
+            style={{
+              maxWidth: "100vw",
+              width: "100vh",
+              margin: "auto",
+              left: 0,
+              right: 0,
+            }}
+          >
+            {currentPage === "img-cropped" ? (
+              <PostcardFront src={imgAfterCrop} />
+            ) : (
+              <PostcardBack setMessageText={setBackText} />
+            )}
           </div>
 
           <button
@@ -89,25 +102,27 @@ function CroppingFlow() {
           </button>
           {currentPage === "img-cropped" ? (
             <button
-            onClick={() => {
+              onClick={() => {
                 setCurrentPage("write-message");
-            }}
-            className="btn"
-          >
-            Write Message
-          </button>
-          ) : 
-          (<button
-            onClick={() => {
+              }}
+              className="btn"
+            >
+              Write Message
+            </button>
+          ) : (
+            <button
+              onClick={() => {
                 setCurrentPage("img-cropped");
-            }}
-            className="btn"
-          >
-            View Postcard
-          </button>)}
+              }}
+              className="btn"
+            >
+              View Postcard
+            </button>
+          )}
           <button
             onClick={() => {
-                setCurrentPage("postcard-sent");
+              setCurrentPage("postcard-sent");
+              console.log(backText);
             }}
             className="btn"
           >

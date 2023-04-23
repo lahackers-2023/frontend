@@ -1,4 +1,4 @@
-import CroppingFlow from "../components/CroppingFlow";
+import CroppingFlow from "../components/Cropping/CroppingFlow";
 
 function PostOffice() {
   return (
