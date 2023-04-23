@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import 'leaflet/dist/leaflet.css';
 import './ReceivePostcard.css'
 
+import PostcardDelivered from '../Components/Postcard/PostcardDelivered'
 
 function Overlay() {
     const [visible, setVisible] = useState(true);
@@ -36,6 +37,7 @@ function Overlay() {
                     </motion.div>)
                 }
             </AnimatePresence>
+            <PostcardDelivered/>
         </>
     )
 
@@ -45,14 +47,16 @@ function ReceivePostcard() {
     const initialCoords = [34.0703, -118.4469]
 
     return (
+      <>
         <div className='container'>
             <MapContainer center={initialCoords} zoom={13} style={{ height: '100vh', width: '100vw' }}>
                 <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' />
                 <Overlay />
             </MapContainer>
-
-
         </div>
+        <PostcardDelivered/>
+        </>
+
     );
 }
 
