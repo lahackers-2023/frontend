@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-import Home from './Views/Home';
+import Landing from './Views/Landing';
 import SignUp from './Views/SignUp'
-import User from './Views/User'
+import Home from './Views/Home'
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from "@auth0/auth0-react";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import VerifyUser from './Views/VerifyUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,15 +16,19 @@ const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <Home/>
+      element: <Landing/>
     },
     {
       path: "/signup",
       element: <SignUp/>
     },
     {
-      path: "/user",
-      element: <User/>
+      path: "/home",
+      element: <Home/>
+    },
+    {
+      path: '/verify',
+      element: <VerifyUser/>
     }
   ]
 );
@@ -34,7 +39,7 @@ root.render(
     domain="dev-xmqkw5ngbkkgcxok.us.auth0.com"
     clientId="uX7ATeboD6Q01x05Z9Xvcj5K2FtJA9nH"
     authorizationParams={{
-      redirect_uri: window.location.origin
+      redirect_uri: "http://localhost:3000/verify"
     }}
   >
   
