@@ -1,0 +1,17 @@
+.login-button {
+    grid-column: 9 / 11;
+    grid-row: 1 / 2;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button-text {
+    color: #527251;
+    font-size: 24px;
+    font-family: 'mulish', sans-serif;
+    font-weight: 600;
+}
