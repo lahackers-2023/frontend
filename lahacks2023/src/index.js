@@ -10,6 +10,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import VerifyUser from "./Views/VerifyUser";
 import ReceivePostcard from "./Views/ReceivePostcard";
+import PostOffice from "./Views/PostOffice";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <Home />,
+    element: <PostOffice />,
   },
   {
     path: "/verify",
