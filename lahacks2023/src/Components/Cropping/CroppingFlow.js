@@ -4,6 +4,8 @@ import ImageCropper from "./ImageCropper";
 import PostcardFront from "../Postcard/PostcardFront";
 import PostcardBack from "../Postcard/PostcardBack";
 
+import axios from "axios";
+
 function CroppingFlow() {
   const [image, setImage] = useState("");
   const [currentPage, setCurrentPage] = useState("choose-img");
@@ -121,8 +123,35 @@ function CroppingFlow() {
           )}
           <button
             onClick={() => {
+              function dataURItoBlob(dataURI) {
+                var binary = atob(dataURI.split(",")[1]);
+                var array = [];
+                for (var i = 0; i < binary.length; i++) {
+                  array.push(binary.charCodeAt(i));
+                }
+                return new Blob([new Uint8Array(array)], {
+                  type: "image/jpeg",
+                });
+              }
               setCurrentPage("postcard-sent");
               console.log(backText);
+              const file = dataURItoBlob(imgAfterCrop);
+              const bodyFormData = new FormData();
+              bodyFormData.append("file", file);
+              axios({
+                method: "post",
+                url: "http://127.0.0.1:8000/postcard/upload?uid=12342536475",
+                data: bodyFormData,
+                headers: { "Content-Type": "multipart/form-data" },
+              })
+                .then(function (response) {
+                  //handle success
+                  console.log(response);
+                })
+                .catch(function (response) {
+                  //handle error
+                  console.log(response);
+                });
             }}
             className="btn"
           >
